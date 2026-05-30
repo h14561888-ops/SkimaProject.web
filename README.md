@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Skima Project | Empresas Invisíveis Não Vendem</title>
+
+  <meta name="description"
+    content="Landing Pages premium e experiências digitais futuristas para empresas que desejam crescer e dominar atenção no mercado.">
+
+  <meta property="og:title" content="Skima Project">
+  <meta property="og:description"
+    content="Transformamos empresas comuns em marcas premium impossíveis de ignorar.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --bg:#04010f;
+      --bg2:#090018;
+
+      --cyan:#00e5ff;
+      --purple:#8b5cf6;
+      --pink:#ff00ff;
+
+      --white:#ffffff;
+      --gray:#a7a7c0;
+
+      --glass:rgba(255,255,255,.05);
+      --border:rgba(255,255,255,.08);
+
+      --shadow:
+      0 0 35px rgba(0,229,255,.25);
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+
+      font-family:'Poppins',sans-serif;
+
+      background:
+      radial-gradient(circle at top left, rgba(0,229,255,.12), transparent 20%),
+      radial-gradient(circle at bottom right, rgba(255,0,255,.10), transparent 20%),
+      linear-gradient(to bottom, var(--bg), var(--bg2));
+
+      color:var(--white);
+
+      overflow-x:hidden;
+
+      position:relative;
+
+    }
+
+    body::before{
+
+      content:"";
+
+      position:fixed;
+
+      inset:0;
+
+      background-image:
+      radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+
+      background-size:40px 40px;
+
+      opacity:.15;
+
+      z-index:-1;
+
+      pointer-events:none;
+
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    section{
+      padding:110px 8%;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .container{
+      max-width:1280px;
+      margin:auto;
+      position:relative;
+      z-index:2;
+    }
+
+    /* BLURS */
+
+    .blur,
+    .blur2{
+
+      position:absolute;
+
+      border-radius:50%;
+
+      filter:blur(180px);
+
+      z-index:0;
+
+      pointer-events:none;
+
+    }
+
+    .blur{
+
+      width:500px;
+      height:500px;
+
+      background:var(--cyan);
+
+      opacity:.12;
+
+      top:-120px;
+      left:-100px;
+
+    }
+
+    .blur2{
+
+      width:400px;
+      height:400px;
+
+      background:var(--pink);
+
+      opacity:.10;
+
+      top:150px;
+      right:-100px;
+
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+
+      position:fixed;
+
+      top:0;
+      left:0;
+
+      width:100%;
+
+      padding:22px 8%;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      z-index:999;
+
+      background:rgba(4,1,15,.72);
+
+      backdrop-filter:blur(18px);
+
+      border-bottom:1px solid rgba(255,255,255,.05);
+
+    }
+
+    .logo{
+
+      font-size:clamp(1.8rem,5vw,2.5rem);
+
+      font-weight:900;
+
+      background:
+      linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+
+      user-select:none;
+
+    }
+
+    .menu{
+
+      display:flex;
+      gap:35px;
+
+    }
+
+    .menu a{
+
+      text-decoration:none;
+
+      color:var(--white);
+
+      transition:.3s;
+
+      font-size:.95rem;
+
+      position:relative;
+
+    }
+
+    .menu a::after{
+
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      bottom:-6px;
+
+      width:0%;
+      height:2px;
+
+      background:var(--cyan);
+
+      transition:.3s;
+
+    }
+
+    .menu a:hover{
+      color:var(--cyan);
+    }
+
+    .menu a:hover::after{
+      width:100%;
+    }
+
+    .menu-toggle{
+
+      display:none;
+
+      font-size:2rem;
+
+      color:var(--white);
+
+      cursor:pointer;
+
+      user-select:none;
+
+    }
+
+    /* BUTTONS */
+
+    .btn,
+    .secondary-btn{
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:16px 30px;
+
+      border-radius:60px;
+
+      text-decoration:none;
+
+      font-weight:600;
+
+      transition:.35s ease;
+
+      cursor:pointer;
+
+      text-align:center;
+
+    }
+
+    .btn{
+
+      background:
+      linear-gradient(90deg,var(--cyan),var(--purple));
+
+      color:var(--white);
+
+      border:none;
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .btn:hover{
+
+      transform:translateY(-4px);
+
+      box-shadow:
+      0 0 45px rgba(0,229,255,.45);
+
+    }
+
+    .secondary-btn{
+
+      color:var(--white);
+
+      background:rgba(255,255,255,.03);
+
+      border:1px solid rgba(255,255,255,.1);
+
+      backdrop-filter:blur(10px);
+
+    }
+
+    .secondary-btn:hover{
+
+      border-color:var(--cyan);
+
+      color:var(--cyan);
+
+      transform:translateY(-4px);
+
+    }
+
+    /* HERO */
+
+    .hero{
+
+      min-height:100vh;
+
+      display:flex;
+      align-items:center;
+
+      padding-top:150px;
+
+    }
+
+    .hero-grid{
+
+      display:grid;
+
+      grid-template-columns:1.1fr 1fr;
+
+      gap:80px;
+
+      align-items:center;
+
+    }
+
+    .hero-text h5{
+
+      color:var(--cyan);
+
+      margin-bottom:20px;
+
+      letter-spacing:2px;
+
+      font-weight:500;
+
+    }
+
+    .hero-text h1{
+
+      font-size:clamp(3rem,8vw,6rem);
+
+      line-height:1.05;
+
+      margin-bottom:30px;
+
+      font-weight:900;
+
+    }
+
+    .hero-text h1 span{
+
+      background:
+      linear-gradient(90deg,var(--cyan),var(--pink));
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+
+    }
+
+    .hero-text p{
+
+      color:var(--gray);
+
+      line-height:1.9;
+
+      font-size:1.08rem;
+
+      margin-bottom:40px;
+
+      max-width:650px;
+
+    }
+
+    .hero-buttons{
+
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+
+    }
+
+    .hero-image{
+
+      position:relative;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+    }
+
+    .hero-image::before{
+
+      content:"";
+
+      position:absolute;
+
+      width:600px;
+      height:600px;
+
+      border-radius:50%;
+
+      background:
+      linear-gradient(45deg,var(--cyan),var(--purple),var(--pink));
+
+      filter:blur(120px);
+
+      opacity:.25;
+
+      animation:pulse 6s infinite alternate;
+
+    }
+
+    .hero-image img{
+
+      width:100%;
+      max-width:500px;
+
+      border-radius:35px;
+
+      border:1px solid rgba(255,255,255,.08);
+
+      position:relative;
+      z-index:2;
+
+      box-shadow:
+      0 0 60px rgba(0,0,0,.5);
+
+      animation:floating 5s ease-in-out infinite;
+
+    }
+
+    @keyframes pulse{
+
+      from{
+        transform:scale(1);
+      }
+
+      to{
+        transform:scale(1.08);
+      }
+
+    }
+
+    @keyframes floating{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-14px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    /* STATS */
+
+    .stats{
+
+      display:grid;
+
+      grid-template-columns:repeat(4,1fr);
+
+      gap:20px;
+
+    }
+
+    .stat{
+
+      background:var(--glass);
+
+      border:1px solid var(--border);
+
+      padding:35px;
+
+      border-radius:28px;
+
+      backdrop-filter:blur(12px);
+
+      transition:.4s;
+
+      position:relative;
+
+      overflow:hidden;
+
+    }
+
+    .stat:hover{
+
+      transform:translateY(-8px);
+
+      border-color:rgba(0,229,255,.35);
+
+    }
+
+    .stat h2{
+
+      color:var(--cyan);
+
+      margin-bottom:12px;
+
+      font-size:2rem;
+
+    }
+
+    .stat p{
+
+      color:var(--gray);
+
+      line-height:1.8;
+
+    }
+
+    /* TITLES */
+
+    .title{
+
+      text-align:center;
+
+      margin-bottom:70px;
+
+    }
+
+    .title h2{
+
+      font-size:clamp(2rem,5vw,4rem);
+
+      margin-bottom:20px;
+
+    }
+
+    .title h2 span{
+
+      background:
+      linear-gradient(90deg,var(--cyan),var(--pink));
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+
+    }
+
+    .title p{
+
+      max-width:760px;
+
+      margin:auto;
+
+      color:var(--gray);
+
+      line-height:1.9;
+
+    }
+
+    /* CARDS */
+
+    .cards{
+
+      display:grid;
+
+      grid-template-columns:repeat(3,1fr);
+
+      gap:25px;
+
+    }
+
+    .card{
+
+      background:rgba(255,255,255,.03);
+
+      border:1px solid rgba(255,255,255,.08);
+
+      padding:40px 30px;
+
+      border-radius:28px;
+
+      transition:.4s;
+
+      backdrop-filter:blur(12px);
+
+      position:relative;
+
+      overflow:hidden;
+
+    }
+
+    .card:hover{
+
+      transform:translateY(-10px);
+
+      border-color:rgba(0,229,255,.35);
+
+    }
+
+    .card h3{
+
+      margin-bottom:18px;
+
+      font-size:1.35rem;
+
+    }
+
+    .card p{
+
+      color:var(--gray);
+
+      line-height:1.8;
+
+    }
+/* PROJETOS */
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+
+.project-video{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:30px;
+  overflow:hidden;
+  backdrop-filter:blur(12px);
+  transition:.4s;
+}
+
+.project-video:hover{
+  transform:translateY(-8px);
+  border-color:rgba(0,229,255,.35);
+}
+
+.project-video video{
+  width:100%;
+  display:block;
+}
+
+.project-info{
+  padding:25px;
+}
+
+.project-info h3{
+  margin-bottom:10px;
+  font-size:1.3rem;
+}
+
+.project-info p{
+  color:var(--gray);
+  line-height:1.8;
+}
+
+@media(max-width:900px){
+
+  .projects-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+    /* SHOWCASE */
+
+    .showcase{
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      gap:70px;
+
+      align-items:center;
+
+    }
+
+    .showcase img{
+
+      width:100%;
+
+      border-radius:35px;
+
+      border:1px solid rgba(255,255,255,.08);
+
+      box-shadow:
+      0 0 50px rgba(0,0,0,.5);
+
+    }
+
+    .showcase-text h2{
+
+      font-size:clamp(2rem,5vw,4rem);
+
+      margin-bottom:25px;
+
+    }
+
+    .showcase-text p{
+
+      color:var(--gray);
+
+      line-height:1.9;
+
+      margin-bottom:25px;
+
+    }
+
+    .quote{
+
+      background:rgba(255,255,255,.03);
+
+      border-left:3px solid var(--cyan);
+
+      padding:25px;
+
+      border-radius:18px;
+
+      line-height:1.8;
+
+      color:var(--white);
+
+    }
+
+    /* CTA */
+
+    .cta{
+
+      background:rgba(255,255,255,.03);
+
+      border:1px solid rgba(255,255,255,.08);
+
+      border-radius:40px;
+
+      padding:80px 25px;
+
+      text-align:center;
+
+      position:relative;
+
+      overflow:hidden;
+
+      backdrop-filter:blur(12px);
+
+    }
+
+    .cta::before{
+
+      content:"";
+
+      position:absolute;
+
+      width:500px;
+      height:500px;
+
+      background:var(--purple);
+
+      filter:blur(180px);
+
+      opacity:.15;
+
+      top:-120px;
+      left:50%;
+
+      transform:translateX(-50%);
+
+    }
+
+    .cta h2{
+
+      font-size:clamp(2rem,6vw,4rem);
+
+      margin-bottom:25px;
+
+      position:relative;
+      z-index:2;
+
+    }
+
+    .cta p{
+
+      color:var(--gray);
+
+      max-width:760px;
+
+      margin:auto auto 30px auto;
+
+      line-height:1.9;
+
+      position:relative;
+      z-index:2;
+
+    }
+
+    .business-hours{
+
+      margin-bottom:35px;
+
+      color:#b9b9d1;
+
+      font-size:.95rem;
+
+      letter-spacing:.5px;
+
+      position:relative;
+      z-index:2;
+
+    }
+
+    .business-hours span{
+
+      color:var(--cyan);
+
+      font-weight:600;
+
+    }
+
+    .contact-buttons{
+
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      flex-wrap:wrap;
+
+      position:relative;
+      z-index:2;
+
+    }
+
+    /* FLOATING WHATSAPP */
+
+    .floating-whatsapp{
+
+      position:fixed;
+
+      bottom:20px;
+      right:20px;
+
+      z-index:9999;
+
+      background:
+      linear-gradient(90deg,var(--cyan),var(--purple));
+
+      color:var(--white);
+
+      text-decoration:none;
+
+      padding:16px 22px;
+
+      border-radius:60px;
+
+      font-weight:600;
+
+      box-shadow:
+      0 0 30px rgba(0,229,255,.35);
+
+      transition:.3s;
+
+    }
+
+    .floating-whatsapp:hover{
+
+      transform:translateY(-4px);
+
+    }
+
+    /* FOOTER */
+
+    footer{
+
+      padding:60px 25px;
+
+      text-align:center;
+
+      color:var(--gray);
+
+      line-height:1.7;
+
+      border-top:1px solid rgba(255,255,255,.05);
+
+      background:rgba(0,0,0,.25);
+
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:1100px){
+
+      .hero-grid,
+      .showcase,
+      .cards,
+      .stats{
+
+        grid-template-columns:1fr;
+
+      }
+
+      .hero,
+      .showcase{
+        text-align:center;
+      }
+
+      .hero-text p{
+        margin-inline:auto;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      section{
+        padding:90px 6%;
+      }
+
+      .navbar{
+        padding:20px 6%;
+      }
+
+      .menu-toggle{
+        display:block;
+      }
+
+      .menu{
+
+        position:fixed;
+
+        top:85px;
+        right:-100%;
+
+        width:260px;
+
+        height:calc(100vh - 85px);
+
+        background:rgba(5,5,15,.96);
+
+        flex-direction:column;
+
+        padding:40px;
+
+        transition:.4s ease;
+
+        backdrop-filter:blur(18px);
+
+      }
+
+      .menu.active{
+        right:0;
+      }
+
+      .hero{
+        padding-top:160px;
+      }
+
+      .hero-buttons,
+      .contact-buttons{
+
+        flex-direction:column;
+        align-items:center;
+
+      }
+
+      .btn,
+      .secondary-btn{
+
+        width:100%;
+        max-width:280px;
+
+        margin:auto;
+
+        padding:16px 20px;
+
+        font-size:.95rem;
+
+        border-radius:18px;
+
+      }
+
+      .hero-image img{
+        max-width:100%;
+      }
+
+      .cta{
+        padding:60px 18px;
+      }
+
+      .floating-whatsapp{
+
+        bottom:15px;
+        right:15px;
+
+        padding:14px 18px;
+
+        font-size:.9rem;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <div class="logo">
+      SKIMA PROJECT
+    </div>
+
+    <div class="menu" id="menu">
+
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+
+      <a href="#projetos">Projetos</a>
+<a href="#autoridade">Autoridade</a>
+      <a href="#contato">Contato</a>
+
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="inicio">
+
+    <div class="blur"></div>
+    <div class="blur2"></div>
+
+    <div class="container hero-grid">
+
+      <div class="hero-text">
+
+        <h5>
+          DESIGN • POSICIONAMENTO • PRESENÇA DIGITAL
+        </h5>
+
+        <h1>
+          Empresas
+          <span>invisíveis</span>
+          não vendem.
+        </h1>
+
+        <p>
+          A Skima Project cria experiências digitais cinematográficas para empresas que desejam crescer,
+          dominar atenção e transmitir autoridade no mercado.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="https://wa.me/5511975615850"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            💬 Falar no WhatsApp
+
+          </a>
+
+          <a href="#servicos" class="secondary-btn">
+            Ver Projetos
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img
+          src="https://i.ibb.co/DfwH89Q3/440-F83-DC-4135-4960-800-F-B283633925-E7.png"
+          alt="Skima Project">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="stats">
+
+        <div class="stat">
+
+          <h2>+Autoridade</h2>
+
+          <p>
+            Sua empresa transmite mais profissionalismo e valor percebido.
+          </p>
+
+        </div>
+
+        <div class="stat">
+
+          <h2>+Impacto</h2>
+
+          <p>
+            Design premium focado em atenção e percepção de marca.
+          </p>
+
+        </div>
+
+        <div class="stat">
+
+          <h2>+Clientes</h2>
+
+          <p>
+            Landing pages pensadas para gerar mais conversões.
+          </p>
+
+        </div>
+
+        <div class="stat">
+
+          <h2>+Presença</h2>
+
+          <p>
+            Sua marca deixa de parecer comum e passa a dominar espaço.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="servicos">
+
+    <div class="container">
+
+      <div class="title">
+
+        <h2>
+          O próximo nível da sua
+          <span>empresa começa aqui.</span>
+        </h2>
+
+        <p>
+          Criamos experiências digitais modernas para negócios que desejam crescer,
+          transmitir autoridade e parecer premium na internet.
+        </p>
+
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+
+          <h3>Landing Pages Premium</h3>
+
+          <p>
+            Páginas cinematográficas, modernas e focadas em conversão.
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Posicionamento Digital</h3>
+
+          <p>
+            Sua empresa passa a transmitir mais valor e profissionalismo.
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Experiência Futurista</h3>
+
+          <p>
+            Glow neon, glassmorphism e identidade visual premium.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+<!-- PROJETOS -->
+
+<section id="projetos">
+
+  <div class="container">
+
+    <div class="title">
+
+      <h2>
+        Alguns projetos que
+        <span>já executamos</span>
+      </h2>
+
+      <p>
+        Resultados reais, projetos reais e empresas que decidiram elevar sua presença digital.
+      </p>
+
+    </div>
+
+    <div class="project-video">
+    <div style="position:relative;width:100%;height:0;padding-bottom:120%;">
+        <iframe
+            src="https://streamable.com/e/o27ppp"
+            allow="fullscreen"
+            allowfullscreen
+            style="border:none;width:100%;height:100%;position:absolute;left:0;top:0;overflow:hidden;">
+        </iframe>
+    </div>
+</div>
+
+        </video>
+
+        <div class="project-info">
+
+          <h3>Projeto Comercial</h3>
+
+          <p>
+            Desenvolvimento visual focado em posicionamento e autoridade para mais possibilidade de conversão.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="project-video">
+
+        <video
+          controls
+          playsinline
+          preload="metadata">
+
+          <source
+            src="videos/projeto2.mp4"
+            type="video/mp4">
+
+        </video>
+
+        <div class="project-info">
+
+          <h3>Projeto Empresarial</h3>
+
+          <p>
+            Solução digital criada para transmitir mais profissionalismo, qualidade e impacto.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- SHOWCASE -->
+
+  <section id="autoridade">
+
+    <div class="container showcase">
+
+      <div>
+
+        <img
+          src="https://i.ibb.co/cXSYpmqR/IMG-3769.png"
+          alt="Skima Project">
+
+      </div>
+
+      <div class="showcase-text">
+
+        <h2>
+          Sua presença digital define quanto sua marca vale.
+        </h2>
+
+        <p>
+          Empresas premium não parecem amadoras.
+          Elas dominam atenção, percepção e posicionamento.
+        </p>
+
+        <p>
+          A Skima Project transforma negócios comuns em marcas impossíveis de ignorar.
+        </p>
+
+        <div class="quote">
+
+          “Se sua empresa não chama atenção, ela perde clientes todos os dias.”
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section id="contato">
+
+    <div class="container">
+
+      <div class="cta">
+
+        <h2>
+          Sua empresa merece ser lembrada.
+        </h2>
+
+        <p>
+          Crie uma presença digital premium e transforme a percepção da sua marca no mercado.
+        </p>
+
+        <div class="business-hours">
+
+          ⏰ Atendimento:
+          <span>07h às 17h • Segunda à Sexta</span>
+
+        </div>
+
+        <div class="contact-buttons">
+
+          <a
+            href="https://wa.me/5511975615850"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            💬 Chamar no WhatsApp
+
+          </a>
+
+          <a
+            href="tel:+5511975615850"
+            class="secondary-btn">
+
+            📞 (11) 97561-5850
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Skima Project — Todos os direitos reservados.
+
+  </footer>
+
+  <!-- FLOATING BUTTON -->
+
+  <a
+    href="https://wa.me/5511975615850"
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    💬 Falar Agora
+
+  </a>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".menu a").forEach(link => {
+
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+      });
+
+    });
+
+    const cards = document.querySelectorAll(".card, .stat");
+
+    cards.forEach(card => {
+
+      card.addEventListener("mousemove", e => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.background = `
+          radial-gradient(
+            circle at ${x}px ${y}px,
+            rgba(0,229,255,.14),
+            rgba(255,255,255,.03)
+          )
+        `;
+
+      });
+
+      card.addEventListener("mouseleave", () => {
+
+        if(card.classList.contains("stat")){
+          card.style.background = "rgba(255,255,255,.05)";
+        } else {
+          card.style.background = "rgba(255,255,255,.03)";
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>
